@@ -12,6 +12,7 @@ using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo("Orleans.Reminders.AzureStorage")]
 [assembly: InternalsVisibleTo("Orleans.Reminders.DynamoDB")]
 [assembly: InternalsVisibleTo("Orleans.Runtime")]
+[assembly: InternalsVisibleTo("Orleans.Runtime.Abstractions")]
 [assembly: InternalsVisibleTo("Orleans.Statistics.AzureStorage")]
 [assembly: InternalsVisibleTo("Orleans.Streaming.AzureStorage")]
 [assembly: InternalsVisibleTo("Orleans.Streaming.EventHubs")]
@@ -39,6 +40,9 @@ using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo("UnitTestGrainInterfaces")]
 [assembly: InternalsVisibleTo("UnitTestGrains")]
 [assembly: InternalsVisibleTo("UnitTests")]
-[assembly: InternalsVisibleTo("Orleans.Logging.Legacy")]
+
+// Legacy provider support
+[assembly: InternalsVisibleTo("Orleans.Core.Legacy")]
+[assembly: InternalsVisibleTo("Orleans.Runtime.Legacy")]
 
 [assembly: KnownAssembly(typeof(IGrain))]
