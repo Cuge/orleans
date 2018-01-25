@@ -11,4 +11,9 @@ namespace OrleansGrainInterfaces
         Task<bool> Approve(T proposal);
         Task<bool> Reject(T proposal);
     }
+    public interface IUser : IGrainWithGuidKey
+    {
+        Task<string> GetName();
+        Task<string> Approve(string str);
+    }
 }

@@ -5,10 +5,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OrleansGrainInterfaces\OrleansGrainInterfaces.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="OrleansGrainInterfaces\" />
   </ItemGroup>
 

@@ -41,16 +41,24 @@ namespace OrleansClient
             client = new ClientBuilder()
                 .ConfigureApplicationParts(p => p.AddFromAppDomain().AddFromApplicationBaseDirectory())
                 .UseConfiguration(config).Build();
+
+            var builder = ClientBuilder.CreateDefault()
+                .UseConfiguration(config)
+                .ConfigureApplicationParts(parts => parts.AddFromAppDomain().AddFromApplicationBaseDirectory());
+
+            client = builder.Build();
+               
             try
             {
                 await client.Connect();
                 running = true;
                 Console.WriteLine("Initialized.");
-                var grain = client.GetGrain<IApproval<string>>(Guid.Empty);
+                var grain = client.GetGrain<IUser>(Guid.Empty);
                 while (running)
                 {
                     string proposal = "ACED Proposal";
-                    var response = await grain.Reject(proposal);
+                    //int num = 15;
+                    var response = await grain.Approve(proposal);
                     Console.WriteLine($"{proposal} was Approved : { response}");
                     await Task.Delay(1000);
                 }
